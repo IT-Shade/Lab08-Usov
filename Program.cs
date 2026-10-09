@@ -1,25 +1,26 @@
-﻿int lessonNumber = 5;
-int totalLessons = 1;
-
-while (lessonNumber >= totalLessons)
-{
-    Console.WriteLine($"Пара {lessonNumber}");
-    lessonNumber--;
-}
-
-Console.WriteLine("Пары закончились");
-
-Console.WriteLine("Вводите оценки по одной, для завершение введите -1");
-int grade = int.Parse(Console.ReadLine());
-
+﻿int sum = 0;
 int count = 0;
+int maxGrade = 0;
 
+Console.WriteLine("Вводите оценки, для завершения введите -1:");
+int grade = int.Parse(Console.ReadLine());
 while (grade != -1)
 {
-    Console.WriteLine($"Оценка принята: {grade}");
+    sum += grade;
     count++;
+    if (grade > maxGrade)
+    {
+        maxGrade = grade;
+    }
+
     grade = int.Parse(Console.ReadLine());
 }
-
-Console.WriteLine("Ввод завершён");
-Console.WriteLine($"Количество введённых оценок {count}");
+if (count > 0)
+{
+    Console.WriteLine($"Средний балл: {(double)sum / count}");
+    Console.WriteLine($"Наибольшая оценка: {maxGrade}");
+}
+else
+{
+    Console.WriteLine("Оценок было выведено");
+}
