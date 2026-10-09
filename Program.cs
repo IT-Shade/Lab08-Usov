@@ -24,3 +24,19 @@ else
 {
     Console.WriteLine("Оценок было выведено");
 }
+
+string correctPassword = "qwerty123";
+
+while (true)
+{
+    Console.WriteLine("Введите пароль от личного кабинета: ");
+    string password = Console.ReadLine();
+
+    if (password == correctPassword)
+    {
+        Console.WriteLine("Доступ разрешён");
+        break;
+    }
+
+    Console.WriteLine("Неверный пароль, попробуйте снова");
+}
