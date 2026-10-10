@@ -1,46 +1,43 @@
-﻿int sum = 0;
-int count = 0;
-int maxGrade = 0;
+﻿string answer;
 
-Console.WriteLine("Вводите оценки, для завершения введите -1:");
-int grade = int.Parse(Console.ReadLine());
-while (grade != -1)
-{
-    sum += grade;
-    count++;
-    if (grade > maxGrade)
-    {
-        maxGrade = grade;
-    }
+do {
+    Console.Write("Введите дату посещения (например, 01.09): ");
+    string date = Console.ReadLine();
+    Console.WriteLine($"Запись добавлена: {date}");
+    
+    Console.Write("Добавить ещё одну запись? (да/нет): ");
+    answer = Console.ReadLine();
+} while (answer == "да");
 
-    grade = int.Parse(Console.ReadLine());
-}
-if (count > 0)
-{
-    Console.WriteLine($"Средний балл: {(double)sum / count}");
-    Console.WriteLine($"Наибольшая оценка: {maxGrade}");
-}
-else
-{
-    Console.WriteLine("Оценок было выведено");
-}
-
-string correctPassword = "qwerty123";
+Console.WriteLine("Дневник сохранён");
 
 int count = 0;
+string name;
 
-while (true)
+Console.WriteLine("Введите имена учеников, для завершения введите конец");
+
+do
 {
-    Console.WriteLine("Введите пароль от личного кабинета: ");
-    count++;
-    string password = Console.ReadLine();
-
-    if (password == correctPassword)
+    name = Console.ReadLine();
+if (name != "конец");
     {
-        Console.WriteLine("Доступ разрешён");
-        break;
+        count++;
     }
+} while (name != "конец");
+Console.WriteLine($"Количество введённых имён: {count}");
 
-    Console.WriteLine("Неверный пароль, попробуйте снова");
-    Console.WriteLine($"Количество неудачных попыток: {count}");
-}
+int totalPages = 0;
+int pagesPerDay;
+
+Console.WriteLine("Введите количество страниц, прочитанных за день, для завершения введите 0:");
+
+do
+{
+    Console.Write("Страниц за день: ");
+    pagesPerDay = Convert.ToInt32(Console.ReadLine());
+    if (pagesPerDay != 0);
+    totalPages += pagesPerDay;
+
+} while (pagesPerDay != 0);
+
+Console.WriteLine($"Количество прочитанных страниц: {totalPages}");
