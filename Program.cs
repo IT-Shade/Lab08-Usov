@@ -27,9 +27,12 @@ else
 
 string correctPassword = "qwerty123";
 
+int count = 0;
+
 while (true)
 {
     Console.WriteLine("Введите пароль от личного кабинета: ");
+    count++;
     string password = Console.ReadLine();
 
     if (password == correctPassword)
@@ -39,4 +42,5 @@ while (true)
     }
 
     Console.WriteLine("Неверный пароль, попробуйте снова");
+    Console.WriteLine($"Количество неудачных попыток: {count}");
 }
